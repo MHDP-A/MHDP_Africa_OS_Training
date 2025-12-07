@@ -64,12 +64,16 @@ mh <- mh %>%
   )
 
 # (Optional) Introduce some missingness for teaching purposes
-set.seed(1234)
+
+set.seed(457)
+
 mh$sleep_hours[sample(1:nrow(mh), size = 100)] <- NA_real_
+
 mh$income_monthly[sample(1:nrow(mh), size = 80)] <- NA_real_
 
 # Save cleaned data
 clean_path <- here::here("data", "mental_health_dataset_clean.rds")
+
 saveRDS(mh, clean_path)
 
 message("Cleaned dataset saved to: ", clean_path)

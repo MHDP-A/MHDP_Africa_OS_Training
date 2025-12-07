@@ -18,7 +18,7 @@ mh_ml <- mh %>%
 mh_ml <- mh_ml %>%
   mutate(depression_dx = forcats::fct_relevel(depression_dx, "Yes"))
 
-set.seed(123)
+set.seed(578)
 mh_split <- initial_split(mh_ml, prop = 0.7, strata = depression_dx)
 mh_train <- training(mh_split)
 mh_test  <- testing(mh_split)

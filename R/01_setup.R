@@ -28,3 +28,4 @@ dir.create(here("figures"), showWarnings = FALSE)
 dir.create(here("reports"), showWarnings = FALSE)
 
 message("Setup complete: packages loaded and directories created.")
+
