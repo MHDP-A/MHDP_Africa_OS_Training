@@ -6,13 +6,13 @@
 
 source(here::here("R", "01_setup.R"))
 
-raw_path <- here::here("data", "mental_health_dataset.xlsx")
+raw_path <- here::here("data", "mental_health_dataset.csv")
 
-mh_raw <- readxl::read_excel(raw_path) %>%
+mh_raw <- readr::read_csv(raw_path) %>%
   janitor::clean_names()
 
 # Quick structure check
-glimpse(mh_raw)
+str(mh_raw)
 
 # Recode categorical variables as factors
 mh <- mh_raw %>%

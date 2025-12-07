@@ -19,7 +19,7 @@ options(
   dplyr.summarise.inform = FALSE
 )
 
-set.seed(1234)
+set.seed(1967)
 
 # Create output directories if they don't exist
 
