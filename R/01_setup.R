@@ -1,9 +1,12 @@
 
-#------------------------------------------------------
-# Purpose: install and load packages needed for analysis. Define helper functions. 
+# R/01_setup.R
+# -------------------------------------------------------------------------
+# Purpose: Install and load required packages, set options, and define helper
+#          functions for the MHDP-Africa reproducibility tutorial.
+# -------------------------------------------------------------------------. 
 
-pkgs <- c("dplyr", "lubridate", "stringr", "ggplot2", "tidyr", "forecast", "stats", "forecast","tidyverse", "readxl", 
-          "janitor", "gt", "gtsummary", "patchwork", "broom", "here")
+pkgs <- c("tidyverse","readxl","janitor","lubridate","skimr","gt","gtsummary","patchwork","broom",
+          "yardstick","tidymodels","here")
 
 if(!"pacman" %in% installed.packages()[,1]){
   install.packages("pacman")
@@ -16,10 +19,12 @@ options(
   dplyr.summarise.inform = FALSE
 )
 
-# create output directories, if they don't exist
+set.seed(1234)
 
-dir.create(here("outputs"), showWarnings = F)
-dir.create(here("figures"), showWarnings = F)
-dir.create(here("reports"), showWarnings = F)
+# Create output directories if they don't exist
 
-message("Setup process complete: packages loaded and directories created")
+dir.create(here("output"), showWarnings = FALSE)
+dir.create(here("figures"), showWarnings = FALSE)
+dir.create(here("reports"), showWarnings = FALSE)
+
+message("Setup complete: packages loaded and directories created.")
